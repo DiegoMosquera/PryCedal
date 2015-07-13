@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+#{set title:'nuevo.html' /}
+
+<form action='@{Mantenimientos.guardar()}' method="post" class="well col-lg-4">
+	<label>Seleccione la maquina para el mantenimiento</label>
+	<select name="id_maquinaria" required="">
+		<option value="">--Seleccione--</option>
+		
+		#{list items: maquinarias,as:'m'}
+			<option value="${m.id}">${m.nombre}</option>
+		#{/list}
+	</select>
+	<br>
+	<input type="date" name="fechaInicio" placeholder="Seleccione la fecha" class="form-control"><br>
+	<input type="date" name="fechaFin" placeholder="Seleccione la fecha"><br>
+	<input type="time" name="tiempoPrevisto" placeholder="Seleccione el tiempo"><br>
+	<input type="text" name="personal" placeholder="Escoja un personal" class="form-control" required= " Campo obligatorio"><br>
+	<input type="submit" value="Guardar"><br>
+		
+</form>
+
+<a href="/mantenimientos">volver</a>

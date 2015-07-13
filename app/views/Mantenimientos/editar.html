@@ -1,0 +1,35 @@
+#{extends 'main.html' /}
+#{set title:'editar.html' /}
+
+
+<form action='@{Mantenimientos.actualizar()}' method="post" class="well col-lg-4">
+	<select name="id_maquinaria" required="" id="ok">
+		<option value="">--Seleccione--</option>
+		
+
+
+
+			#{list items: maquinarias,as:'m'}
+				
+				#{if m==mantenimiento.maquinaria}
+					<option value="${m.id}" selected>${m.nombre}</option>
+				#{/if}
+				#{else}
+					<option value="${m.id}">${m.nombre}</option>
+				#{/else}
+			#{/list}
+
+
+	</select>
+	<br>
+	<input type="hidden" name="id" value="${mantenimiento.id}">
+	<input type="date" value="${mantenimiento.fechaInicio}" name="fechaInicio" placeholder="Seleccione la fecha" class="form-control"><br>
+	<input type="date" value="${mantenimiento.fechaFin}" name="fechaFin" placeholder="Seleccione la fecha"><br>
+	<input type="time" value="${mantenimiento.tiempoPrevisto}"name="tiempoPrevisto" placeholder="Seleccione el tiempo"><br>
+	<input type="text" value="${mantenimiento.personal}" name="personal" placeholder="Escoja un personal" class="form-control" required= " Campo obligatorio"><br>
+	<input type="submit" value="Actualizar"><br>
+		
+</form>
+
+<a href="/mantenimientos">volver</a>
+

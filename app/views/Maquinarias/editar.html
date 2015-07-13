@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'editar.html' /}
+
+<form action='@{Maquinarias.actualizar()}' method="post" class="well col-lg-4">
+	<input type="hidden" name="id" value="${maquinaria.id}">
+	<input type="text" name="nombre" value="${maquinaria.nombre}" placeholder="Escriba el nombre de la maquinaria" required= " Campo obligatorio"><br>
+	<input type="text" name="serie" value="${maquinaria.serie}" placeholder="Escriba la serie de la maquinaria" required= " Campo obligatorio"><br>
+	<input type="text" name="area" value="${maquinaria.area}" placeholder="Escriba el area de la maquinaria" required= " Campo obligatorio"><br>
+	<input type="text" name="tipo" value="${maquinaria.tipo}"placeholder="Escriba el tipo de la maquinaria" required= " Campo obligatorio"><br>
+	<textarea name="descripcion" value="${maquinaria.descripcion}" required= " Campo obligatorio" rows="5" cols="5"></textarea><br>
+
+	<input type="submit" value="Actualizar"><br>
+		
+</form>
+
+<a href="/mantenimientos">volver</a>

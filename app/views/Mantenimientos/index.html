@@ -1,0 +1,48 @@
+#{extends 'main.html' /}
+#{set title:'index.html' /}
+
+
+
+
+
+<a href="/mantenimientos/nuevo" class="btn btn-info">Nuevo</a>
+
+
+
+
+#{if mantenimientos}
+
+
+	<table class="table table-stripped table-hover table-bordered">
+		<tr class="bg-primary">
+			<td>Maquinaria</td>
+			<td>Fecha de Inicio</td>
+			<td>Fecha de Fin</td>
+			<td>Tiempo</td>
+			<td>Responsable</td>
+			<td colspan="2">Acciones</td>	
+		
+		</tr>
+	#{list items:mantenimientos,as:'mantenimiento'}
+	
+		<tr>
+		
+			<td>${mantenimiento.maquinaria.nombre}</td>
+			<td>${mantenimiento.fechaInicio}</td>
+			<td>${mantenimiento.fechaFin}</td>
+			<td>${mantenimiento.tiempoPrevisto}</td>
+			<td>${mantenimiento.personal}</td>
+			<td>
+			<a class="btn btn-warning" href="@{Mantenimientos.editar(mantenimiento.id)}">Editar</a>
+			<a class="btn btn-danger" href="@{Mantenimientos.eliminar(mantenimiento.id)}" onClick="return confirm('Esta seguro de eliminar');">Eliminar</a>
+			</td>
+		
+		</tr>
+	
+	#{/list}
+	</table>
+	
+#{/if}
+#{else}
+	<h1>No existen mantenimientos</h1>
+#{/else}

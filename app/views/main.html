@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="${_response_encoding}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.css'}">
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+      	<script src="@{'/public/javascripts/jquery-1.11.3.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        <script src="@{'/public/javascripts/bootstrap.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    </head>
+    <body>
+		<nav class="navbar navbar-inverse">
+	  		<div class="container-fluid">
+	    		<div class="navbar-header">
+	      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        			<span class="sr-only">Toggle navigation</span>
+	        			<span class="icon-bar"></span>
+	        			<span class="icon-bar"></span>
+	        			<span class="icon-bar"></span>
+	      			</button>
+	      		<a class="navbar-brand" href="/">CEDAL</a>
+	    		</div>
+	    		
+	   		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      		<ul class="nav navbar-nav">
+	        		<li class="active"><a href="/"><i class="glyphicon glyphicon-home" style="color:#005dab"></i> Inicio <span class="sr-only">(current)</span></a></li>
+	        		<li class="dropdown">
+	          		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Personal<span class="caret"></span></a>
+	          			<ul class="dropdown-menu">
+	            		<li><a href="/mantenimientos/nuevo"> <i class="glyphicon glyphicon-plus" style="color:#005dab"></i> Registrar nuevo personal</a></li>
+						<li><a href="/mantenimientos"><i class="glyphicon glyphicon-list-alt" style="color:#005dab"></i> Ver lista de personal</a></li>
+	            		<li><a href="#"><i class="glyphicon glyphicon-tasks"style="color:#005dab"></i> Reportes</a></li>
+	            		<li><a href="#"><i class="glyphicon glyphicon-stats"style="color:#0a5a9c"></i> Estadisticas</a></li>
+	          			</ul>
+	        		</li>
+	        		<li class="dropdown">
+	          		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Maquinaria<span class="caret"></span></a>
+	          			<ul class="dropdown-menu">
+	            		<li><a href="/maquinarias/nuevo"> <i class="glyphicon glyphicon-plus" style="color:#005dab"></i> Nueva</a></li>
+	            		<li><a href="/maquinarias"><i class="glyphicon glyphicon-list-alt" style="color:#005dab"></i> Ver todas</a></li>
+	            		<li><a href="#"><i class="glyphicon glyphicon-tasks"style="color:#005dab"></i> Reportes</a></li>
+	            		<li><a href="#"><i class="glyphicon glyphicon-stats"style="color:#0a5a9c"></i> Estadisticas</a></li>
+	          			</ul>
+	        			</li>
+	        		<li class="dropdown">
+	          		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mantenimientos<span class="caret"></span></a>
+	          			<ul class="dropdown-menu">
+	            		<li><a href="/mantenimientos/nuevo"> <i class="glyphicon glyphicon-plus" style="color:#005dab"></i> Nuevo</a></li>
+						<li><a href="/mantenimientos"><i class="glyphicon glyphicon-list-alt" style="color:#005dab"></i> Ver todas</a></li>
+	            		<li><a href="#"><i class="glyphicon glyphicon-tasks"style="color:#005dab"></i> Reportes</a></li>
+	            		<li><a href="#"><i class="glyphicon glyphicon-stats"style="color:#0a5a9c"></i> Estadisticas</a></li>
+	          			</ul>
+	        		</li>
+	        		<li class="dropdown">
+	          		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manuales<span class="caret"></span></a>
+	          			<ul class="dropdown-menu">
+	            		<li><a href="/manuales/nuevo"> <i class="glyphicon glyphicon-plus" style="color:#005dab"></i> Nuevo</a></li>
+						<li><a href="/manuales"><i class="glyphicon glyphicon-list-alt" style="color:#005dab"></i> Ver todos</a></li>
+	            		<li><a href="#"><i class="glyphicon glyphicon-tasks"style="color:#005dab"></i> Reportes</a></li>
+	            		<li><a href="#"><i class="glyphicon glyphicon-stats"style="color:#0a5a9c"></i> Estadisticas</a></li>
+	          			</ul>
+	        		</li>
+	      		</ul>
+	    	</div>
+	  		</div>
+		</nav>
+        #{doLayout /}
+    </body> 
+    <footer>
+    
+    </footer>
+</html>

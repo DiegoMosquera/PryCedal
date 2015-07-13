@@ -1,0 +1,24 @@
+#{extends 'main.html' /}
+#{set title:'nueva_maquinaria' /}
+
+<html>
+	<header>
+	</header>
+	<body>
+		
+		<form action='@{Maquinarias.guardar()}' method="post" class="well col-lg-4">
+		<input type="text" name="nombre" placeholder="Escriba el nombre de la maquinaria" required= " Campo obligatorio" class="from-control"><br>
+		<input type="text" name="serie" placeholder="Escriba la serie de la maquinaria"required= " Campo obligatorio"><br>
+		<input type="text" name="area" placeholder="Escriba el area de la maquinaria"required= " Campo obligatorio"><br>
+		<input type="text" name="tipo" placeholder="Escriba el tipo de la maquinaria"required= " Campo obligatorio"><br>
+		<textarea name="descripcion" required= "Campo obligatorio" rows="10" cols=""></textarea><br>
+		<input type="submit" value="Guardar"><br>			
+		</form>
+	</body>
+	<footer>
+	</footer>
+</html>
+
+
+
+<a href="/maquinarias">volver</a>

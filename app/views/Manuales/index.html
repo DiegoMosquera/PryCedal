@@ -1,0 +1,40 @@
+#{extends 'main.html' /}
+#{set title:'index.html' /}
+
+
+
+<a href="/manuales/nuevo" class="btn btn-info">Nuevo</a>
+
+
+
+
+#{if manuales}
+
+
+	<table class="table table-stripped table-hover table-bordered">
+		<tr class="bg-primary">
+			<td>Maquinaria</td>
+			<td>Archivo</td>
+			<td colspan="2">Acciones</td>	
+		
+		</tr>
+	#{list items:manuales,as:'manual'}
+	
+		<tr>
+		
+			<td>${manual.maquinaria.nombre}</td>
+			<td>${manual.archivo}</td>
+			<td>
+			<a class="btn btn-warning" href="@{Manuales.editar(manual.id)}">Editar</a>
+			<a class="btn btn-danger" href="@{Manuales.eliminar(manual.id)}" onClick="return confirm('Esta seguro de eliminar');">Eliminar</a>
+			</td>
+		
+		</tr>
+	
+	#{/list}
+	</table>
+	
+#{/if}
+#{else}
+	<h1>No existen manuales</h1>
+#{/else}

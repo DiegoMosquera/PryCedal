@@ -1,0 +1,45 @@
+#{extends 'main.html' /}
+#{set title:'principal_maquinaria' /}
+
+<html>
+	<head>
+	
+	</head>
+	
+	<body>
+		#{if maquinarias}
+			<table class="table table-stripped table-hover table-bordered">
+				<tr class="bg-primary">
+					<td>Nombre</td>
+					<td>Serie</td>
+					<td>Area</td>
+					<td>Tipo</td>
+					<td>Descripcion</td>
+					<td colspan="2">Acciones</td>	
+				</tr>
+		#{list items:maquinarias,as:'maquinaria'}	
+				<tr>
+					<td>${maquinaria.nombre}</td>
+					<td>${maquinaria.serie}</td>
+					<td>${maquinaria.area}</td>
+					<td>${maquinaria.tipo}</td>
+					<td>${maquinaria.descripcion}</td>
+					<td>
+					<a class="btn btn-warning" href="@{Maquinarias.editar(maquinaria.id)}">Editar</a>
+					<a class="btn btn-danger" href="@{Maquinarias.eliminar(maquinaria.id)}" onClick="return confirm('Esta seguro de eliminar esta maquinaria');">Eliminar</a>
+					</td>
+				</tr>
+		#{/list}
+			</table>
+		#{/if}
+		#{else}
+			<h1>No existen maquinarias</h1>
+		#{/else}
+	</body>
+	
+	<footer>
+	
+	</footer>
+</html>
+<a class="btn btn-primary" href="/maquinarias/nuevo">Nuevo</a>
+
